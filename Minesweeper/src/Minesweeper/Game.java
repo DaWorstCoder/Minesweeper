@@ -5,8 +5,8 @@ import java.util.ArrayList;
 /**Everything related to game mechanics**/
 public class Game {
 
-	public static int rows = 7;
-	public static int cols = 7;
+	public static int rows = 10;
+	public static int cols = 10;
 	public static Block[][] board = new Block[rows][cols];
 	
 	static boolean over = false;
@@ -14,6 +14,7 @@ public class Game {
 	
 	private static int totalNumOfMines = 0;
 			
+
 	public static void start() {
 		//Initalizing the board
 		for(int row = 0; row < rows; row++) {
@@ -124,48 +125,48 @@ public class Game {
 		int col = block.xPos;
 		int row = block.yPos;
 
-		if (!block.rightEdgePiece) {
-			if (!block.topEdgePiece) {
-				if (!checkedBoxes.contains(board[row - 1][col + 1])) {
-					if ((board[row - 1][col + 1].numOfMines == 0 || touchEmptyBlock(board[row - 1][col + 1])) && !board[row - 1][col + 1].mine) {
-						checkSurroundingBlocks(board[row - 1][col + 1]);
-					}	
-				}
-			}
+		// if (!block.rightEdgePiece) {
+		// 	if (!block.topEdgePiece) {
+		// 		if (!checkedBoxes.contains(board[row - 1][col + 1])) {
+		// 			if ((board[row - 1][col + 1].numOfMines == 0 || touchEmptyBlock(board[row - 1][col + 1])) && !board[row - 1][col + 1].mine) {
+		// 				checkSurroundingBlocks(board[row - 1][col + 1]);
+		// 			}	
+		// 		}
+		// 	}
 			
 			
-		}
+		// }
 		
-		if (!block.leftEdgePiece) {
-			if (!block.topEdgePiece) {
-				if (!checkedBoxes.contains(board[row - 1][col - 1])) {
-					if ((board[row - 1][col - 1].numOfMines == 0 || touchEmptyBlock(board[row - 1][col - 1])) && !board[row - 1][col - 1].mine) {
-						checkSurroundingBlocks(board[row - 1][col - 1]);
-					}	
-				}
-			}
-		}
+		// if (!block.leftEdgePiece) {
+		// 	if (!block.topEdgePiece) {
+		// 		if (!checkedBoxes.contains(board[row - 1][col - 1])) {
+		// 			if ((board[row - 1][col - 1].numOfMines == 0 || touchEmptyBlock(board[row - 1][col - 1])) && !board[row - 1][col - 1].mine) {
+		// 				checkSurroundingBlocks(board[row - 1][col - 1]);
+		// 			}	
+		// 		}
+		// 	}
+		// }
 		
-		if(!block.rightEdgePiece) {
-			if (!block.bottomEdgePiece) {
-				if (!checkedBoxes.contains(board[row + 1][col + 1])) {
-					if ((board[row + 1][col + 1].numOfMines == 0 || touchEmptyBlock(board[row + 1][col + 1])) && !board[row + 1][col + 1].mine) {
-						checkSurroundingBlocks(board[row + 1][col + 1]);
-					}
-				}
-			}
-		}
+		// if(!block.rightEdgePiece) {
+		// 	if (!block.bottomEdgePiece) {
+		// 		if (!checkedBoxes.contains(board[row + 1][col + 1])) {
+		// 			if ((board[row + 1][col + 1].numOfMines == 0 || touchEmptyBlock(board[row + 1][col + 1])) && !board[row + 1][col + 1].mine) {
+		// 				checkSurroundingBlocks(board[row + 1][col + 1]);
+		// 			}
+		// 		}
+		// 	}
+		// }
 		
-		if(!block.leftEdgePiece) {
-			if (!block.bottomEdgePiece) {
-				if (!checkedBoxes.contains(board[row + 1][col - 1])) {
-					if ((board[row + 1][col - 1].numOfMines == 0 || touchEmptyBlock(board[row + 1][col - 1])) && !board[row + 1][col - 1].mine) {
-						checkSurroundingBlocks(board[row + 1][col - 1]);
-					}
-				}
-			}
+		// if(!block.leftEdgePiece) {
+		// 	if (!block.bottomEdgePiece) {
+		// 		if (!checkedBoxes.contains(board[row + 1][col - 1])) {
+		// 			if ((board[row + 1][col - 1].numOfMines == 0 || touchEmptyBlock(board[row + 1][col - 1])) && !board[row + 1][col - 1].mine) {
+		// 				checkSurroundingBlocks(board[row + 1][col - 1]);
+		// 			}
+		// 		}
+		// 	}
 			
-		}
+		// }
 		
 		//
 		if (!block.rightEdgePiece) {

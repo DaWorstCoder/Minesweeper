@@ -7,6 +7,7 @@ import java.awt.*;
 class Main extends JPanel implements ActionListener {
 	static final int height = 500;
 	static final int width = 500;
+	static int topBanner;
 	Timer timer;
 
 	//TODO: add a GUI?
@@ -27,6 +28,11 @@ class Main extends JPanel implements ActionListener {
 		/** This can be commented out if a static image is to be produced. **/
 		timer = new Timer(1, this);
 		timer.start();
+
+		/*I fucking hate it here */
+		Insets inset = Frame.getInsets();
+		topBanner = inset.top;
+
 		
 	}
 

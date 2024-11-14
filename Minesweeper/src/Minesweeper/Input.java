@@ -15,9 +15,9 @@ public class Input implements MouseListener {
 	public void mouseExited(MouseEvent e) {}
 	
 	public void mouseClicked(MouseEvent e) {
-		int boardMouseCol = (int) Math.floor(((double) (e.getX() - e.getX() % Game.cols) / Main.width) * Game.cols); //TODO: replace with block size
-		int boardMouseRow = (int) Math.floor(((double) (e.getY() - e.getY() % Game.rows) / Main.height) * Game.rows);
-		
+		int boardMouseCol = (int) ((e.getX() / (double) Main.width) * Game.cols); //TODO: replace with block size
+		int boardMouseRow = (int) (((e.getY() -Main.topBanner) / (double) Main.height) * Game.rows);
+
 		if (!Game.over) {
 			if(e.getButton() == MouseEvent.BUTTON3) { //right click
 

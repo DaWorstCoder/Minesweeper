@@ -23,11 +23,11 @@ public class Paint {
 	
 	void board(Graphics g) {
 		try {
-			one = ImageIO.read(new File("/Users/23005744/Downloads/one.png"));
+			one = ImageIO.read(new File("Minesweeper/src/Minesweeper/pics/one.jpg"));
 			one = resize(one, (Main.width / Game.board.length), (Main.height / Game.board[0].length));
-			two = ImageIO.read(new File("/Users/23005744/Downloads/two.png"));
+			two = ImageIO.read(new File("Minesweeper/src/Minesweeper/pics/two.jpg"));
 			two = resize(two, (Main.width / Game.board.length), (Main.height / Game.board[0].length));
-			three = ImageIO.read(new File("/Users/23005744/Downloads/three.png"));
+			three = ImageIO.read(new File("Minesweeper/src/Minesweeper/pics/three.jpg"));
 			three = resize(three, (Main.width / Game.board.length), (Main.height / Game.board[0].length));
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
@@ -44,7 +44,7 @@ public class Paint {
 //				}
 				
 				if (Game.board[row][col].visible) {
-					g.setColor(new Color (40, 40, 40));
+					g.setColor(new Color (194, 194, 194));
 					g.fillRect(col * (Main.width / Game.board.length), row * (Main.height / Game.board[0].length), (Main.width / Game.board.length), (Main.height / Game.board[0].length));
 					g.setColor(new Color (200, 200, 200));
 					g.drawRect(col * (Main.width / Game.board.length), row * (Main.height / Game.board[0].length), (Main.width / Game.board.length), (Main.height / Game.board[0].length));
@@ -66,17 +66,17 @@ public class Paint {
 								g.drawImage(three, (int) (col * (Main.width / Game.board.length)), (int) ((row) * (Main.height / Game.board[0].length)), null); 
 								break;	
 							case 4: 
-								four = ImageIO.read(new File("/Users/23005744/Downloads/four.png"));
+								four = ImageIO.read(new File("Minesweeper/src/Minesweeper/pics/four.jpg"));
 								four = resize(four, (Main.width / Game.board.length), (Main.height / Game.board[0].length));
 								g.drawImage(four, (int) (col * (Main.width / Game.board.length)), (int) ((row) * (Main.height / Game.board[0].length)), null);
 								break;
 							case 5: 
-								five = ImageIO.read(new File("/Users/23005744/Downloads/five.png"));
+								five = ImageIO.read(new File("Minesweeper/src/Minesweeper/pics/five.jpg"));
 								five = resize(five, (Main.width / Game.board.length), (Main.height / Game.board[0].length));
 								g.drawImage(five, (int) (col * (Main.width / Game.board.length)), (int) ((row) * (Main.height / Game.board[0].length)), null);
 								break;
 							case 6: 
-								six = ImageIO.read(new File("/Users/23005744/Downloads/six.png"));
+								six = ImageIO.read(new File("Minesweeper/src/Minesweeper/pics/six.jpg"));
 								six = resize(six, (Main.width / Game.board.length), (Main.height / Game.board[0].length));
 								g.drawImage(six, (int) (col * (Main.width / Game.board.length)), (int) ((row) * (Main.height / Game.board[0].length)), null);
 								break;
@@ -106,7 +106,7 @@ public class Paint {
 					if (Game.board[row][col].flagged) {
 						
 						try {
-							flagPic = ImageIO.read(new File("/Users/23005744/Downloads/flag.png"));
+							flagPic = ImageIO.read(new File("Minesweeper/src/Minesweeper/pics/flag.jpg"));
 							g.drawImage(resize(flagPic, (Main.width / Game.board.length), (Main.height / Game.board[0].length)), (int) (col * (Main.width / Game.board.length)), (int) ((row) * (Main.height / Game.board[0].length)), null); 
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
@@ -121,7 +121,7 @@ public class Paint {
 	
 	void win(Graphics g) {
 		try {
-			winScreen = ImageIO.read(new File("/Users/23005744/Downloads/pixel-art-8bit-you-win-text-with-winner-golden-cup-vector-33826631-removebg-preview.png"));
+			winScreen = ImageIO.read(new File("Minesweeper/src/Minesweeper/pics/one.jpg"));
 			g.drawImage(winScreen, 0, 0, null);
 			
 		} catch (IOException e) {
@@ -132,7 +132,7 @@ public class Paint {
 	
 	void lose(Graphics g) {
 		try {
-			mine = ImageIO.read(new File("/Users/23005744/Downloads/mine.png"));
+			mine = ImageIO.read(new File("Minesweeper/src/Minesweeper/pics/mine.jpg"));
 			mine = resize(mine, (Main.width / Game.board.length), (Main.height / Game.board[0].length));
 			
 			for(int row = 0; row < Game.board.length; row++) {
